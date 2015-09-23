@@ -1,0 +1,532 @@
+[11:12:59,037] INFO  {NatTestLauncher} initiating
+[11:12:59,267] INFO  {NatTestLauncher} starting
+[11:12:59,362] INFO  {Config} System: seed:-3418128274972233948
+[11:12:59,362] INFO  {Config} System: self ip:null port:30000 id:1
+[11:12:59,365] INFO  {Config} System: caracal:missing
+[11:12:59,365] INFO  {Config} System: aggregator:missing
+[11:12:59,366] INFO  {Config} Nat:globalCroupier:0
+[11:12:59,373] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:12:59,379] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:12:59,380] INFO  {Config} Nat:croupier bootstrap:[]
+[11:12:59,385] INFO  {IpSolverComp} initiating...
+[11:12:59,387] INFO  {IpSolverComp} starting...
+[11:12:59,388] DEBUG {IpSolverComp} GetIp request
+[11:12:59,397] DEBUG {IpSolverComp} GetIp responding
+[11:12:59,398] INFO  {NatSetup} received local interfaces:[NI:name:en0 (en0) addr:/193.10.67.178 up:true mtu:1500 netPrefixLength:22, NI:name:lo0 (lo0) addr:/127.0.0.1 up:true mtu:16384 netPrefixLength:8]
+[11:12:59,398] INFO  {NatSetup} multiple ips detected, proceeding with:/193.10.67.178
+[11:12:59,398] INFO  {NatSetup} starting with local interface:/193.10.67.178
+[11:12:59,400] INFO  {Config} Nat:globalCroupier:0
+[11:12:59,400] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:12:59,401] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:12:59,401] INFO  {Config} Nat:croupier bootstrap:[]
+[11:12:59,411] INFO  {NatDetectionComp} 193.10.67.178:30000<1> initiating...
+[11:12:59,412] INFO  {NatDetectionComp} 193.10.67.178:30000<1> starting...
+[11:12:59,416] INFO  {StunClientComp} /193.10.67.178<43211,43210> initiating...
+[11:12:59,425] INFO  {StunClientComp} /193.10.67.178<43211,43210> starting...
+[11:12:59,425] INFO  {StunClientComp} /193.10.67.178<43211,43210> setting up network hook1
+[11:12:59,426] INFO  {NatSetup} binding on stun:193.10.67.178:43211<1>
+[11:12:59,427] INFO  {UpnpComp} nat upnp initiating...
+[11:12:59,430] INFO  {UpnpComp} nat upnp starting...
+[11:12:59,478] DEBUG {UpnpComp} nat upnp :Device notified:M-SEARCH * HTTP/1.1
+ST: upnp:rootdevice
+MX: 3
+MAN: "ssdp:discover"
+HOST: 239.255.255.250:1900
+
+
+[11:12:59,553] INFO  {SocketUDT} library location : ./lib/bin
+[11:12:59,554] INFO  {SocketUDT} loader provider  : com.barchart.udt.lib.LibraryLoaderUDT
+[11:12:59,555] INFO  {PluginPropsUDT} ARCH/OS/LINK = x86_64/MacOSX/gpp
+[11:12:59,556] INFO  {LibraryLoaderUDT} Platform supported.
+[11:12:59,557] INFO  {LibraryLoaderUDT} Loading release libraries.
+[11:12:59,678] INFO  {LibraryLoaderUDT} Release libraries loaded.
+[11:12:59,686] INFO  {StunClientComp} /193.10.67.178<43211,43210> setting up network hook2
+[11:12:59,686] INFO  {NatSetup} binding on stun:193.10.67.178:43210<1>
+[11:12:59,699] INFO  {StunClientComp} /193.10.67.178<43211,43210> starting new echo session:e57ce054-5483-42f2-8423-68e5ba0aabd9
+[11:12:59,701] INFO  {StunClientComp} /193.10.67.178<43211,43210> stun server1:193.10.64.107:54321<-1> 193.10.64.107:54320<-1>
+[11:12:59,701] INFO  {StunClientComp} /193.10.67.178<43211,43210> stun server2:193.10.64.85:54321<-2> 193.10.64.85:54320<-2>
+[11:12:59,702] DEBUG {StunClientComp} /193.10.67.178<43211,43210> sending:SIP_SP from:193.10.67.178:43211<1> to:193.10.64.107:54321<-1>
+[11:12:59,793] INFO  {NettyNetwork@43211} Successfully bound to ip:port /193.10.67.178:43211
+[11:12:59,793] INFO  {NettyNetwork@43210} Successfully bound to ip:port /193.10.67.178:43210
+[11:12:59,818] INFO  {NettyNetwork@43211} Successfully bound UDT to ip:port /193.10.67.178:54687 with config: {RCVBUF_ALLOCATOR=io.netty.channel.AdaptiveRecvByteBufAllocator@7dd3130f, WRITE_BUFFER_HIGH_WATER_MARK=65536, io.netty.channel.udt.UdtChannelOption#SYSTEM_SEND_BUFFER_SIZE=1048576, io.netty.channel.udt.UdtChannelOption#SYSTEM_RECEIVE_BUFFER_SIZE=1048576, SO_BACKLOG=64, MESSAGE_SIZE_ESTIMATOR=io.netty.channel.DefaultMessageSizeEstimator@19d744c5, io.netty.channel.udt.UdtChannelOption#PROTOCOL_SEND_BUFFER_SIZE=10485760, ALLOCATOR=PooledByteBufAllocator(directByDefault: true), SO_SNDBUF=131072, io.netty.channel.udt.UdtChannelOption#PROTOCOL_RECEIVE_BUFFER_SIZE=10485760, AUTO_READ=true, CONNECT_TIMEOUT_MILLIS=30000, WRITE_BUFFER_LOW_WATER_MARK=32768, SO_RCVBUF=131072, WRITE_SPIN_COUNT=16, SO_REUSEADDR=true, SO_LINGER=0, MAX_MESSAGES_PER_READ=16}
+[11:12:59,818] INFO  {NettyNetwork@43210} Successfully bound UDT to ip:port /193.10.67.178:61386 with config: {RCVBUF_ALLOCATOR=io.netty.channel.AdaptiveRecvByteBufAllocator@7dd3130f, WRITE_BUFFER_HIGH_WATER_MARK=65536, io.netty.channel.udt.UdtChannelOption#SYSTEM_SEND_BUFFER_SIZE=1048576, io.netty.channel.udt.UdtChannelOption#SYSTEM_RECEIVE_BUFFER_SIZE=1048576, SO_BACKLOG=64, MESSAGE_SIZE_ESTIMATOR=io.netty.channel.DefaultMessageSizeEstimator@19d744c5, io.netty.channel.udt.UdtChannelOption#PROTOCOL_SEND_BUFFER_SIZE=10485760, ALLOCATOR=PooledByteBufAllocator(directByDefault: true), SO_SNDBUF=131072, io.netty.channel.udt.UdtChannelOption#PROTOCOL_RECEIVE_BUFFER_SIZE=10485760, AUTO_READ=true, CONNECT_TIMEOUT_MILLIS=30000, WRITE_BUFFER_LOW_WATER_MARK=32768, SO_RCVBUF=131072, WRITE_SPIN_COUNT=16, SO_REUSEADDR=true, SO_LINGER=0, MAX_MESSAGES_PER_READ=16}
+[11:12:59,835] INFO  {NettyNetwork@43210} Successfully bound to ip:port /193.10.67.178:43210
+[11:12:59,835] TRACE {NettyNetwork@43210} Channel connected: UDP /193.10.67.178:43210 => null ([id: 0x7b15df53, /193.10.67.178:43210])
+[11:12:59,835] INFO  {NettyNetwork@43211} Successfully bound to ip:port /193.10.67.178:43211
+[11:12:59,835] TRACE {NettyNetwork@43211} Channel connected: UDP /193.10.67.178:43211 => null ([id: 0x966d9ed4, /193.10.67.178:43211])
+[11:12:59,868] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicContentMsg, found: 133
+[11:12:59,870] TRACE {Serializers} ID: [0, 0, 0, -123] (3, 4)
+[11:12:59,870] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@10b8216f for object STUN_ECHO_REQ<SIP_SP>from:193.10.67.178:43211<1>to:193.10.64.107:54321<-1> (sID : [-123]) .
+[11:12:59,871] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.DecoratedHeader, found: 132
+[11:12:59,871] TRACE {Serializers} ID: [0, 0, 0, -124] (3, 4)
+[11:12:59,871] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@41339b23 for object se.sics.p2ptoolbox.util.network.impl.DecoratedHeader@7c7a3d21 (sID : [-124]) .
+[11:12:59,871] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicHeader, found: 130
+[11:12:59,871] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.DecoratedAddress, found: 129
+[11:12:59,871] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicAddress, found: 128
+[11:12:59,875] TRACE {Serializers} Checked rule for class se.sics.nat.stun.msg.StunEcho$Request, found: 135
+[11:12:59,875] TRACE {Serializers} ID: [0, 0, 0, -121] (3, 4)
+[11:12:59,875] DEBUG {Serializers} Using serializer se.sics.nat.stun.msg.StunEchoSerializer$Request@631270b for object STUN_ECHO_REQ<SIP_SP> (sID : [-121]) .
+[11:12:59,875] TRACE {Serializers} Checked rule for class java.util.UUID, found: 6
+[11:12:59,875] DEBUG {NettyNetwork@43211} Sending Datagram message se.sics.kompics.network.MessageNotify$Req@33a414d7 (61bytes)
+[11:12:59,899] TRACE {Serializers} DS-ID: 133 ([-123], 4)
+[11:12:59,899] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@10b8216f for buffer with hint {}.
+[11:12:59,899] TRACE {Serializers} DS-ID: 132 ([-124], 4)
+[11:12:59,899] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@41339b23 for buffer with hint {}.
+[11:12:59,899] TRACE {Serializers} DS-ID: 136 ([-120], 4)
+[11:12:59,899] DEBUG {Serializers} Using deserializer se.sics.nat.stun.msg.StunEchoSerializer$Response@664a132 for buffer with hint Optional.absent().
+[11:12:59,900] DEBUG {NettyNetwork@43211} Delivering message STUN_ECHO_RESP<SIP_SP>from:193.10.64.107:54321<-1>to:193.10.67.178:43211<1> from 193.10.64.107:54321<-1> to 193.10.67.178:43211<1> protocol UDP
+[11:12:59,900] DEBUG {StunClientComp} /193.10.67.178<43211,43210> received:STUN_ECHO_RESP<SIP_SP> from:193.10.64.107:54321<-1>
+[11:12:59,901] DEBUG {StunClientComp} /193.10.67.178<43211,43210> sending:DIP_DP from:193.10.67.178:43211<1> to:193.10.64.107:54321<-1>
+[11:12:59,915] TRACE {Serializers} ID: [0, 0, 0, -123] (3, 4)
+[11:12:59,915] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@10b8216f for object STUN_ECHO_REQ<DIP_DP>from:193.10.67.178:43211<1>to:193.10.64.107:54321<-1> (sID : [-123]) .
+[11:12:59,915] TRACE {Serializers} ID: [0, 0, 0, -124] (3, 4)
+[11:12:59,915] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@41339b23 for object se.sics.p2ptoolbox.util.network.impl.DecoratedHeader@7c7a3d21 (sID : [-124]) .
+[11:12:59,915] TRACE {Serializers} ID: [0, 0, 0, -121] (3, 4)
+[11:12:59,915] DEBUG {Serializers} Using serializer se.sics.nat.stun.msg.StunEchoSerializer$Request@631270b for object STUN_ECHO_REQ<DIP_DP> (sID : [-121]) .
+[11:12:59,916] DEBUG {NettyNetwork@43211} Sending Datagram message se.sics.kompics.network.MessageNotify$Req@3139d8 (72bytes)
+[11:12:59,947] TRACE {Serializers} DS-ID: 133 ([-123], 4)
+[11:12:59,947] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@10b8216f for buffer with hint {}.
+[11:12:59,948] TRACE {Serializers} DS-ID: 132 ([-124], 4)
+[11:12:59,948] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@41339b23 for buffer with hint {}.
+[11:12:59,948] TRACE {Serializers} DS-ID: 136 ([-120], 4)
+[11:12:59,948] DEBUG {Serializers} Using deserializer se.sics.nat.stun.msg.StunEchoSerializer$Response@664a132 for buffer with hint Optional.absent().
+[11:12:59,948] DEBUG {NettyNetwork@43211} Delivering message STUN_ECHO_RESP<DIP_DP>from:193.10.64.85:54320<-2>to:193.10.67.178:43211<1> from 193.10.64.85:54320<-2> to 193.10.67.178:43211<1> protocol UDP
+[11:12:59,948] DEBUG {StunClientComp} /193.10.67.178<43211,43210> received:STUN_ECHO_RESP<DIP_DP> from:193.10.64.85:54320<-2>
+[11:12:59,949] INFO  {StunClientComp} /193.10.67.178<43211,43210> session result:OPEN
+[11:12:59,954] INFO  {NatDetectionComp} 193.10.67.178:30000<1> nat detected:OP public ip:/193.10.67.178
+[11:13:00,680] TRACE {Cybergarage} UP&P.getAddress() is called \o/
+[11:13:00,680] DEBUG {Cybergarage} No UP&P device found, detection of the external ip address using the plugin has failed
+[11:13:00,684] INFO  {NatDetectionComp} 193.10.67.178:30000<1> upnp ready:Optional.absent()
+[11:13:00,685] INFO  {NatSetup} nat detected:OP public ip:/193.10.67.178 private ip:/193.10.67.178
+[11:13:00,685] DEBUG {NatSetup} Initiating the binding on the socket to keep the port being used by some other service.
+[11:13:00,685] DEBUG {NatSetup} Trying to bind on the socket1 with ip: /193.10.67.178 and port: 30000
+[11:13:00,690] DEBUG {NatSetup} Socket successfully bound to ip :/193.10.67.178 and port: 30000
+[11:13:00,690] DEBUG {NatSetup} {}Building the system configuration.
+[11:13:00,695] INFO  {Config} Nat:globalCroupier:0
+[11:13:00,695] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:13:00,696] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:13:00,696] INFO  {Config} Nat:croupier bootstrap:[]
+[11:13:00,699] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:13:00,710] INFO  {NatTraverserComp} 193.10.67.178:30000<1> initiating...
+[11:13:00,730] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:13:00,740] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> initiating with bootstrap nodes:[] ...
+[11:13:00,742] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribing
+[11:13:00,743] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribed
+[11:13:00,744] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> starting...
+[11:13:00,744] INFO  {NatTraverserComp} 193.10.67.178:30000<1> starting...
+[11:13:00,744] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> updating selfView:se.sics.nat.common.croupier.GlobalCroupierView@78d2c2f
+[11:13:00,745] INFO  {NatTraverserComp} 193.10.67.178:30000<1> setting up network
+[11:13:00,745] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:13:00,745] ERROR {Kompics} Handling an event caused a fault! Might be handled later...
+java.lang.RuntimeException: se.sics.nat.NatTraverserComp@36cc5582 has no negative se.sics.kompics.network.Network
+	at se.sics.kompics.JavaComponent.getNegative(JavaComponent.java:95)
+	at se.sics.nat.NatSetup.finish(NatSetup.java:281)
+	at se.sics.nat.NatSetup.access$1000(NatSetup.java:74)
+	at se.sics.nat.NatSetup$3.handle(NatSetup.java:202)
+	at se.sics.nat.NatSetup$3.handle(NatSetup.java:188)
+	at se.sics.kompics.JavaComponent.executeEvent(JavaComponent.java:365)
+	at se.sics.kompics.JavaComponent.execute(JavaComponent.java:309)
+	at se.sics.kompics.Scheduler.executeComponent(Scheduler.java:15)
+	at se.sics.kompics.scheduler.ThreadPoolScheduler.access$100(ThreadPoolScheduler.java:15)
+	at se.sics.kompics.scheduler.ThreadPoolScheduler$1.run(ThreadPoolScheduler.java:35)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[11:13:00,746] INFO  {NatSetup} binding on nat:193.10.67.178:30000<1>OP
+[11:13:00,746] TRACE {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> JOIN
+[11:13:00,748] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> joining using nodes:[]
+[11:13:00,748] ERROR {Kompics} A fault was escalated to the root component: 
+KompicsFault(java.lang.RuntimeException: se.sics.nat.NatTraverserComp@36cc5582 has no negative se.sics.kompics.network.Network thrown in Component(ce49db7d-d6a0-4cc4-a876-6340f2a905cc):se.sics.nattest.NatTestLauncher@170ad4d5 while handling event se.sics.nat.stun.NatReady@20566350) 
+
+
+[11:13:00,748] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:13:00,750] INFO  {Kompics} User declared that Fault KompicsFault(java.lang.RuntimeException: se.sics.nat.NatTraverserComp@36cc5582 has no negative se.sics.kompics.network.Network thrown in Component(ce49db7d-d6a0-4cc4-a876-6340f2a905cc):se.sics.nattest.NatTestLauncher@170ad4d5 while handling event se.sics.nat.stun.NatReady@20566350) should quit JVM...
+[11:16:20,844] INFO  {NatTestLauncher} initiating
+[11:16:21,094] INFO  {NatTestLauncher} starting
+[11:16:21,183] INFO  {Config} System: seed:-4636197391102219564
+[11:16:21,184] INFO  {Config} System: self ip:null port:30000 id:1
+[11:16:21,186] INFO  {Config} System: caracal:missing
+[11:16:21,186] INFO  {Config} System: aggregator:missing
+[11:16:21,189] INFO  {Config} Nat:globalCroupier:0
+[11:16:21,194] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:16:21,200] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:16:21,201] INFO  {Config} Nat:croupier bootstrap:[]
+[11:16:21,205] INFO  {IpSolverComp} initiating...
+[11:16:21,206] INFO  {IpSolverComp} starting...
+[11:16:21,207] DEBUG {IpSolverComp} GetIp request
+[11:16:21,215] DEBUG {IpSolverComp} GetIp responding
+[11:16:21,215] INFO  {NatSetup} received local interfaces:[NI:name:en0 (en0) addr:/193.10.67.178 up:true mtu:1500 netPrefixLength:22, NI:name:lo0 (lo0) addr:/127.0.0.1 up:true mtu:16384 netPrefixLength:8]
+[11:16:21,215] INFO  {NatSetup} multiple ips detected, proceeding with:/193.10.67.178
+[11:16:21,216] INFO  {NatSetup} starting with local interface:/193.10.67.178
+[11:16:21,217] INFO  {Config} Nat:globalCroupier:0
+[11:16:21,217] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:16:21,218] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:16:21,219] INFO  {Config} Nat:croupier bootstrap:[]
+[11:16:21,228] INFO  {NatDetectionComp} 193.10.67.178:30000<1> initiating...
+[11:16:21,230] INFO  {NatDetectionComp} 193.10.67.178:30000<1> starting...
+[11:16:21,234] INFO  {StunClientComp} /193.10.67.178<43211,43210> initiating...
+[11:16:21,241] INFO  {StunClientComp} /193.10.67.178<43211,43210> starting...
+[11:16:21,241] INFO  {StunClientComp} /193.10.67.178<43211,43210> setting up network hook1
+[11:16:21,242] INFO  {NatSetup} binding on stun:193.10.67.178:43211<1>
+[11:16:21,244] INFO  {UpnpComp} nat upnp initiating...
+[11:16:21,247] INFO  {UpnpComp} nat upnp starting...
+[11:16:21,285] DEBUG {UpnpComp} nat upnp :Device notified:M-SEARCH * HTTP/1.1
+ST: upnp:rootdevice
+MX: 3
+MAN: "ssdp:discover"
+HOST: 239.255.255.250:1900
+
+
+[11:16:21,375] INFO  {SocketUDT} library location : ./lib/bin
+[11:16:21,375] INFO  {SocketUDT} loader provider  : com.barchart.udt.lib.LibraryLoaderUDT
+[11:16:21,376] INFO  {PluginPropsUDT} ARCH/OS/LINK = x86_64/MacOSX/gpp
+[11:16:21,378] INFO  {LibraryLoaderUDT} Platform supported.
+[11:16:21,378] INFO  {LibraryLoaderUDT} Loading release libraries.
+[11:16:21,489] INFO  {LibraryLoaderUDT} Release libraries loaded.
+[11:16:21,503] INFO  {StunClientComp} /193.10.67.178<43211,43210> setting up network hook2
+[11:16:21,504] INFO  {NatSetup} binding on stun:193.10.67.178:43210<1>
+[11:16:21,519] INFO  {StunClientComp} /193.10.67.178<43211,43210> starting new echo session:95869efc-9814-415a-822e-cefc647e2068
+[11:16:21,519] INFO  {StunClientComp} /193.10.67.178<43211,43210> stun server1:193.10.64.107:54321<-1> 193.10.64.107:54320<-1>
+[11:16:21,519] INFO  {StunClientComp} /193.10.67.178<43211,43210> stun server2:193.10.64.85:54321<-2> 193.10.64.85:54320<-2>
+[11:16:21,520] DEBUG {StunClientComp} /193.10.67.178<43211,43210> sending:SIP_SP from:193.10.67.178:43211<1> to:193.10.64.107:54321<-1>
+[11:16:21,612] INFO  {NettyNetwork@43211} Successfully bound to ip:port /193.10.67.178:43211
+[11:16:21,612] INFO  {NettyNetwork@43210} Successfully bound to ip:port /193.10.67.178:43210
+[11:16:21,629] INFO  {NettyNetwork@43211} Successfully bound UDT to ip:port /193.10.67.178:49605 with config: {CONNECT_TIMEOUT_MILLIS=30000, WRITE_BUFFER_LOW_WATER_MARK=32768, SO_LINGER=0, MAX_MESSAGES_PER_READ=16, RCVBUF_ALLOCATOR=io.netty.channel.AdaptiveRecvByteBufAllocator@4ca9b3b3, AUTO_READ=true, WRITE_SPIN_COUNT=16, io.netty.channel.udt.UdtChannelOption#PROTOCOL_RECEIVE_BUFFER_SIZE=10485760, WRITE_BUFFER_HIGH_WATER_MARK=65536, io.netty.channel.udt.UdtChannelOption#SYSTEM_SEND_BUFFER_SIZE=1048576, MESSAGE_SIZE_ESTIMATOR=io.netty.channel.DefaultMessageSizeEstimator@3ede2190, io.netty.channel.udt.UdtChannelOption#SYSTEM_RECEIVE_BUFFER_SIZE=1048576, io.netty.channel.udt.UdtChannelOption#PROTOCOL_SEND_BUFFER_SIZE=10485760, SO_SNDBUF=131072, SO_REUSEADDR=true, ALLOCATOR=PooledByteBufAllocator(directByDefault: true), SO_RCVBUF=131072, SO_BACKLOG=64}
+[11:16:21,629] INFO  {NettyNetwork@43210} Successfully bound UDT to ip:port /193.10.67.178:64978 with config: {CONNECT_TIMEOUT_MILLIS=30000, WRITE_BUFFER_LOW_WATER_MARK=32768, SO_LINGER=0, MAX_MESSAGES_PER_READ=16, RCVBUF_ALLOCATOR=io.netty.channel.AdaptiveRecvByteBufAllocator@4ca9b3b3, AUTO_READ=true, WRITE_SPIN_COUNT=16, io.netty.channel.udt.UdtChannelOption#PROTOCOL_RECEIVE_BUFFER_SIZE=10485760, WRITE_BUFFER_HIGH_WATER_MARK=65536, io.netty.channel.udt.UdtChannelOption#SYSTEM_SEND_BUFFER_SIZE=1048576, MESSAGE_SIZE_ESTIMATOR=io.netty.channel.DefaultMessageSizeEstimator@3ede2190, io.netty.channel.udt.UdtChannelOption#SYSTEM_RECEIVE_BUFFER_SIZE=1048576, io.netty.channel.udt.UdtChannelOption#PROTOCOL_SEND_BUFFER_SIZE=10485760, SO_SNDBUF=131072, SO_REUSEADDR=true, ALLOCATOR=PooledByteBufAllocator(directByDefault: true), SO_RCVBUF=131072, SO_BACKLOG=64}
+[11:16:21,643] INFO  {NettyNetwork@43211} Successfully bound to ip:port /193.10.67.178:43211
+[11:16:21,643] TRACE {NettyNetwork@43211} Channel connected: UDP /193.10.67.178:43211 => null ([id: 0xb5e2d3fd, /193.10.67.178:43211])
+[11:16:21,643] TRACE {NettyNetwork@43210} Channel connected: UDP /193.10.67.178:43210 => null ([id: 0x4574d15c, /193.10.67.178:43210])
+[11:16:21,643] INFO  {NettyNetwork@43210} Successfully bound to ip:port /193.10.67.178:43210
+[11:16:21,673] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicContentMsg, found: 133
+[11:16:21,675] TRACE {Serializers} ID: [0, 0, 0, -123] (3, 4)
+[11:16:21,676] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@478ae7c5 for object STUN_ECHO_REQ<SIP_SP>from:193.10.67.178:43211<1>to:193.10.64.107:54321<-1> (sID : [-123]) .
+[11:16:21,676] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.DecoratedHeader, found: 132
+[11:16:21,676] TRACE {Serializers} ID: [0, 0, 0, -124] (3, 4)
+[11:16:21,676] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@11c8cace for object se.sics.p2ptoolbox.util.network.impl.DecoratedHeader@f8679503 (sID : [-124]) .
+[11:16:21,676] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicHeader, found: 130
+[11:16:21,676] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.DecoratedAddress, found: 129
+[11:16:21,677] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicAddress, found: 128
+[11:16:21,682] TRACE {Serializers} Checked rule for class se.sics.nat.stun.msg.StunEcho$Request, found: 135
+[11:16:21,682] TRACE {Serializers} ID: [0, 0, 0, -121] (3, 4)
+[11:16:21,682] DEBUG {Serializers} Using serializer se.sics.nat.stun.msg.StunEchoSerializer$Request@6ecf70d1 for object STUN_ECHO_REQ<SIP_SP> (sID : [-121]) .
+[11:16:21,683] TRACE {Serializers} Checked rule for class java.util.UUID, found: 6
+[11:16:21,683] DEBUG {NettyNetwork@43211} Sending Datagram message se.sics.kompics.network.MessageNotify$Req@55048c7d (61bytes)
+[11:16:21,710] TRACE {Serializers} DS-ID: 133 ([-123], 4)
+[11:16:21,711] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@478ae7c5 for buffer with hint {}.
+[11:16:21,711] TRACE {Serializers} DS-ID: 132 ([-124], 4)
+[11:16:21,711] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@11c8cace for buffer with hint {}.
+[11:16:21,711] TRACE {Serializers} DS-ID: 136 ([-120], 4)
+[11:16:21,711] DEBUG {Serializers} Using deserializer se.sics.nat.stun.msg.StunEchoSerializer$Response@3be44e14 for buffer with hint Optional.absent().
+[11:16:21,712] DEBUG {NettyNetwork@43211} Delivering message STUN_ECHO_RESP<SIP_SP>from:193.10.64.107:54321<-1>to:193.10.67.178:43211<1> from 193.10.64.107:54321<-1> to 193.10.67.178:43211<1> protocol UDP
+[11:16:21,713] DEBUG {StunClientComp} /193.10.67.178<43211,43210> received:STUN_ECHO_RESP<SIP_SP> from:193.10.64.107:54321<-1>
+[11:16:21,713] DEBUG {StunClientComp} /193.10.67.178<43211,43210> sending:DIP_DP from:193.10.67.178:43211<1> to:193.10.64.107:54321<-1>
+[11:16:21,722] TRACE {Serializers} ID: [0, 0, 0, -123] (3, 4)
+[11:16:21,722] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@478ae7c5 for object STUN_ECHO_REQ<DIP_DP>from:193.10.67.178:43211<1>to:193.10.64.107:54321<-1> (sID : [-123]) .
+[11:16:21,722] TRACE {Serializers} ID: [0, 0, 0, -124] (3, 4)
+[11:16:21,722] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@11c8cace for object se.sics.p2ptoolbox.util.network.impl.DecoratedHeader@f8679503 (sID : [-124]) .
+[11:16:21,722] TRACE {Serializers} ID: [0, 0, 0, -121] (3, 4)
+[11:16:21,722] DEBUG {Serializers} Using serializer se.sics.nat.stun.msg.StunEchoSerializer$Request@6ecf70d1 for object STUN_ECHO_REQ<DIP_DP> (sID : [-121]) .
+[11:16:21,722] DEBUG {NettyNetwork@43211} Sending Datagram message se.sics.kompics.network.MessageNotify$Req@54e6aac8 (72bytes)
+[11:16:21,748] TRACE {Serializers} DS-ID: 133 ([-123], 4)
+[11:16:21,748] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@478ae7c5 for buffer with hint {}.
+[11:16:21,748] TRACE {Serializers} DS-ID: 132 ([-124], 4)
+[11:16:21,748] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@11c8cace for buffer with hint {}.
+[11:16:21,748] TRACE {Serializers} DS-ID: 136 ([-120], 4)
+[11:16:21,748] DEBUG {Serializers} Using deserializer se.sics.nat.stun.msg.StunEchoSerializer$Response@3be44e14 for buffer with hint Optional.absent().
+[11:16:21,749] DEBUG {NettyNetwork@43211} Delivering message STUN_ECHO_RESP<DIP_DP>from:193.10.64.85:54320<-2>to:193.10.67.178:43211<1> from 193.10.64.85:54320<-2> to 193.10.67.178:43211<1> protocol UDP
+[11:16:21,749] DEBUG {StunClientComp} /193.10.67.178<43211,43210> received:STUN_ECHO_RESP<DIP_DP> from:193.10.64.85:54320<-2>
+[11:16:21,757] INFO  {StunClientComp} /193.10.67.178<43211,43210> session result:OPEN
+[11:16:21,759] INFO  {NatDetectionComp} 193.10.67.178:30000<1> nat detected:OP public ip:/193.10.67.178
+[11:16:22,489] TRACE {Cybergarage} UP&P.getAddress() is called \o/
+[11:16:22,489] DEBUG {Cybergarage} No UP&P device found, detection of the external ip address using the plugin has failed
+[11:16:22,491] INFO  {NatDetectionComp} 193.10.67.178:30000<1> upnp ready:Optional.absent()
+[11:16:22,491] INFO  {NatSetup} nat detected:OP public ip:/193.10.67.178 private ip:/193.10.67.178
+[11:16:22,491] DEBUG {NatSetup} Initiating the binding on the socket to keep the port being used by some other service.
+[11:16:22,492] DEBUG {NatSetup} Trying to bind on the socket1 with ip: /193.10.67.178 and port: 30000
+[11:16:22,492] DEBUG {NatSetup} Socket successfully bound to ip :/193.10.67.178 and port: 30000
+[11:16:22,493] DEBUG {NatSetup} {}Building the system configuration.
+[11:16:22,495] INFO  {Config} Nat:globalCroupier:0
+[11:16:22,495] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:16:22,495] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:16:22,495] INFO  {Config} Nat:croupier bootstrap:[]
+[11:16:22,498] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:16:22,505] INFO  {NatTraverserComp} 193.10.67.178:30000<1> initiating...
+[11:16:22,521] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:16:22,528] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> initiating with bootstrap nodes:[] ...
+[11:16:22,529] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribing
+[11:16:22,529] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribed
+[11:16:22,530] INFO  {NatTraverserComp} 193.10.67.178:30000<1> starting...
+[11:16:22,530] INFO  {NatTraverserComp} 193.10.67.178:30000<1> setting up network
+[11:16:22,531] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> starting...
+[11:16:22,531] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> updating selfView:se.sics.nat.common.croupier.GlobalCroupierView@27ba6d81
+[11:16:22,531] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:16:22,531] INFO  {NatSetup} binding on nat:193.10.67.178:30000<1>OP
+[11:16:22,531] TRACE {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> JOIN
+[11:16:22,531] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> joining using nodes:[]
+[11:16:22,531] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:16:22,534] INFO  {ChunkManagerComp} config - datagramUsableSize:1000 cleanupTimeout:10000
+[11:16:22,535] INFO  {NettyNetwork@30000} Successfully bound to ip:port /193.10.67.178:30000
+[11:16:22,538] INFO  {NettyNetwork@30000} Successfully bound UDT to ip:port /193.10.67.178:51809 with config: {CONNECT_TIMEOUT_MILLIS=30000, WRITE_BUFFER_LOW_WATER_MARK=32768, SO_LINGER=0, MAX_MESSAGES_PER_READ=16, RCVBUF_ALLOCATOR=io.netty.channel.AdaptiveRecvByteBufAllocator@4ca9b3b3, AUTO_READ=true, WRITE_SPIN_COUNT=16, io.netty.channel.udt.UdtChannelOption#PROTOCOL_RECEIVE_BUFFER_SIZE=10485760, WRITE_BUFFER_HIGH_WATER_MARK=65536, io.netty.channel.udt.UdtChannelOption#SYSTEM_SEND_BUFFER_SIZE=1048576, MESSAGE_SIZE_ESTIMATOR=io.netty.channel.DefaultMessageSizeEstimator@3ede2190, io.netty.channel.udt.UdtChannelOption#SYSTEM_RECEIVE_BUFFER_SIZE=1048576, io.netty.channel.udt.UdtChannelOption#PROTOCOL_SEND_BUFFER_SIZE=10485760, SO_SNDBUF=131072, SO_REUSEADDR=true, ALLOCATOR=PooledByteBufAllocator(directByDefault: true), SO_RCVBUF=131072, SO_BACKLOG=64}
+[11:16:22,540] INFO  {NettyNetwork@30000} Successfully bound to ip:port /193.10.67.178:30000
+[11:16:22,540] TRACE {NettyNetwork@30000} Channel connected: UDP /193.10.67.178:30000 => null ([id: 0x6da99997, /193.10.67.178:30000])
+[11:16:22,540] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP initiating...
+[11:16:22,540] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP starting...
+[11:16:22,545] INFO  {PMServerComp} 193.10.67.178:30000<1> initiating...
+[11:16:22,545] INFO  {PMServerComp} 193.10.67.178:30000<1> starting...
+[11:16:22,552] INFO  {SHPClientComp} 193.10.67.178:30000<1> initiating...
+[11:16:22,553] INFO  {SHPClientComp} 193.10.67.178:30000<1> starting...
+[11:16:22,556] INFO  {HPServerComp} 193.10.67.178:30000<1> initiating...
+[11:16:22,557] INFO  {HPServerComp} 193.10.67.178:30000<1> starting...
+[11:16:27,549] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat
+[11:16:32,552] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat
+[11:16:32,552] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat check
+[11:16:32,558] TRACE {NatTraverserComp} 193.10.67.178:30000<1> heartbeating on open connections:0
+[11:16:37,549] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat
+[11:16:42,548] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat
+[11:16:42,549] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat check
+[11:16:42,559] TRACE {NatTraverserComp} 193.10.67.178:30000<1> heartbeating on open connections:0
+[11:16:42,559] TRACE {NatTraverserComp} 193.10.67.178:30000<1> heartbeat check
+[11:16:47,550] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat
+[11:16:52,550] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat
+[11:16:52,550] DEBUG {PMServerComp} 193.10.67.178:30000<1> periodic heartbeat check
+[11:16:52,551] INFO  {PMServerComp} 193.10.67.178:30000<1> internal state check - children:0, heartbeats:0
+[11:16:52,554] INFO  {SHPClientComp} 193.10.67.178:30000<1> sessions - initiator:0 target:0
+[11:16:52,558] TRACE {NatTraverserComp} 193.10.67.178:30000<1> heartbeating on open connections:0
+[11:16:52,558] INFO  {NatTraverserComp} 193.10.67.178:30000<1> internal state check connection tracker - open:0 new:0
+[11:16:52,559] INFO  {NatTraverserComp} 193.10.67.178:30000<1> internal state check connection maker - pending:0
+[11:16:52,559] INFO  {NatTraverserComp} 193.10.67.178:30000<1> internal state check traffic tracker - buffering for targets:0
+[11:18:12,361] INFO  {NatTestLauncher} initiating
+[11:18:12,569] INFO  {NatTestLauncher} starting
+[11:18:12,650] INFO  {Config} System: seed:-2131394927265683342
+[11:18:12,650] INFO  {Config} System: self ip:null port:30000 id:1
+[11:18:12,651] INFO  {Config} System: caracal:missing
+[11:18:12,651] INFO  {Config} System: aggregator:missing
+[11:18:12,655] INFO  {Config} Nat:globalCroupier:0
+[11:18:12,660] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:18:12,664] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:18:12,665] INFO  {Config} Nat:croupier bootstrap:[]
+[11:18:12,669] INFO  {IpSolverComp} initiating...
+[11:18:12,671] INFO  {IpSolverComp} starting...
+[11:18:12,672] DEBUG {IpSolverComp} GetIp request
+[11:18:12,680] DEBUG {IpSolverComp} GetIp responding
+[11:18:12,681] INFO  {Config} Nat:globalCroupier:0
+[11:18:12,681] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:18:12,682] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:18:12,682] INFO  {Config} Nat:croupier bootstrap:[]
+[11:18:12,998] INFO  {NettyNetwork@43210} Successfully bound to ip:port /193.10.67.178:43210
+[11:18:12,998] INFO  {NettyNetwork@43211} Successfully bound to ip:port /193.10.67.178:43211
+[11:18:13,016] INFO  {NettyNetwork@43211} Successfully bound UDT to ip:port /193.10.67.178:63338 with config: {RCVBUF_ALLOCATOR=io.netty.channel.AdaptiveRecvByteBufAllocator@30ae3373, io.netty.channel.udt.UdtChannelOption#SYSTEM_RECEIVE_BUFFER_SIZE=1048576, SO_BACKLOG=64, io.netty.channel.udt.UdtChannelOption#PROTOCOL_SEND_BUFFER_SIZE=10485760, io.netty.channel.udt.UdtChannelOption#SYSTEM_SEND_BUFFER_SIZE=1048576, SO_SNDBUF=131072, AUTO_READ=true, ALLOCATOR=PooledByteBufAllocator(directByDefault: true), io.netty.channel.udt.UdtChannelOption#PROTOCOL_RECEIVE_BUFFER_SIZE=10485760, SO_REUSEADDR=true, MESSAGE_SIZE_ESTIMATOR=io.netty.channel.DefaultMessageSizeEstimator@1271bc74, WRITE_BUFFER_LOW_WATER_MARK=32768, SO_LINGER=0, MAX_MESSAGES_PER_READ=16, WRITE_BUFFER_HIGH_WATER_MARK=65536, WRITE_SPIN_COUNT=16, SO_RCVBUF=131072, CONNECT_TIMEOUT_MILLIS=30000}
+[11:18:13,016] INFO  {NettyNetwork@43210} Successfully bound UDT to ip:port /193.10.67.178:59314 with config: {RCVBUF_ALLOCATOR=io.netty.channel.AdaptiveRecvByteBufAllocator@30ae3373, io.netty.channel.udt.UdtChannelOption#SYSTEM_RECEIVE_BUFFER_SIZE=1048576, SO_BACKLOG=64, io.netty.channel.udt.UdtChannelOption#PROTOCOL_SEND_BUFFER_SIZE=10485760, io.netty.channel.udt.UdtChannelOption#SYSTEM_SEND_BUFFER_SIZE=1048576, SO_SNDBUF=131072, AUTO_READ=true, ALLOCATOR=PooledByteBufAllocator(directByDefault: true), io.netty.channel.udt.UdtChannelOption#PROTOCOL_RECEIVE_BUFFER_SIZE=10485760, SO_REUSEADDR=true, MESSAGE_SIZE_ESTIMATOR=io.netty.channel.DefaultMessageSizeEstimator@1271bc74, WRITE_BUFFER_LOW_WATER_MARK=32768, SO_LINGER=0, MAX_MESSAGES_PER_READ=16, WRITE_BUFFER_HIGH_WATER_MARK=65536, WRITE_SPIN_COUNT=16, SO_RCVBUF=131072, CONNECT_TIMEOUT_MILLIS=30000}
+[11:18:13,032] INFO  {NettyNetwork@43211} Successfully bound to ip:port /193.10.67.178:43211
+[11:18:13,032] TRACE {NettyNetwork@43211} Channel connected: UDP /193.10.67.178:43211 => null ([id: 0x12277ac2, /193.10.67.178:43211])
+[11:18:13,033] TRACE {NettyNetwork@43210} Channel connected: UDP /193.10.67.178:43210 => null ([id: 0x4520844e, /193.10.67.178:43210])
+[11:18:13,032] INFO  {NettyNetwork@43210} Successfully bound to ip:port /193.10.67.178:43210
+[11:18:13,064] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicContentMsg, found: 133
+[11:18:13,066] TRACE {Serializers} ID: [0, 0, 0, -123] (3, 4)
+[11:18:13,066] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@5c071207 for object STUN_ECHO_REQ<SIP_SP>from:193.10.67.178:43211<1>to:193.10.64.107:54321<-1> (sID : [-123]) .
+[11:18:13,066] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.DecoratedHeader, found: 132
+[11:18:13,066] TRACE {Serializers} ID: [0, 0, 0, -124] (3, 4)
+[11:18:13,067] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@1fb003bd for object se.sics.p2ptoolbox.util.network.impl.DecoratedHeader@cb5c03b8 (sID : [-124]) .
+[11:18:13,067] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicHeader, found: 130
+[11:18:13,067] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.DecoratedAddress, found: 129
+[11:18:13,067] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicAddress, found: 128
+[11:18:13,072] TRACE {Serializers} Checked rule for class se.sics.nat.stun.msg.StunEcho$Request, found: 135
+[11:18:13,072] TRACE {Serializers} ID: [0, 0, 0, -121] (3, 4)
+[11:18:13,073] DEBUG {Serializers} Using serializer se.sics.nat.stun.msg.StunEchoSerializer$Request@54da1e9c for object STUN_ECHO_REQ<SIP_SP> (sID : [-121]) .
+[11:18:13,073] TRACE {Serializers} Checked rule for class java.util.UUID, found: 6
+[11:18:13,074] DEBUG {NettyNetwork@43211} Sending Datagram message se.sics.kompics.network.MessageNotify$Req@1d7fcc74 (61bytes)
+[11:18:13,111] TRACE {Serializers} DS-ID: 133 ([-123], 4)
+[11:18:13,112] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@5c071207 for buffer with hint {}.
+[11:18:13,112] TRACE {Serializers} DS-ID: 132 ([-124], 4)
+[11:18:13,112] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@1fb003bd for buffer with hint {}.
+[11:18:13,112] TRACE {Serializers} DS-ID: 136 ([-120], 4)
+[11:18:13,112] DEBUG {Serializers} Using deserializer se.sics.nat.stun.msg.StunEchoSerializer$Response@1839c2b6 for buffer with hint Optional.absent().
+[11:18:13,113] DEBUG {NettyNetwork@43211} Delivering message STUN_ECHO_RESP<SIP_SP>from:193.10.64.107:54321<-1>to:193.10.67.178:43211<1> from 193.10.64.107:54321<-1> to 193.10.67.178:43211<1> protocol UDP
+[11:18:13,130] TRACE {Serializers} ID: [0, 0, 0, -123] (3, 4)
+[11:18:13,131] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@5c071207 for object STUN_ECHO_REQ<DIP_DP>from:193.10.67.178:43211<1>to:193.10.64.107:54321<-1> (sID : [-123]) .
+[11:18:13,131] TRACE {Serializers} ID: [0, 0, 0, -124] (3, 4)
+[11:18:13,131] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@1fb003bd for object se.sics.p2ptoolbox.util.network.impl.DecoratedHeader@cb5c03b8 (sID : [-124]) .
+[11:18:13,131] TRACE {Serializers} ID: [0, 0, 0, -121] (3, 4)
+[11:18:13,131] DEBUG {Serializers} Using serializer se.sics.nat.stun.msg.StunEchoSerializer$Request@54da1e9c for object STUN_ECHO_REQ<DIP_DP> (sID : [-121]) .
+[11:18:13,131] DEBUG {NettyNetwork@43211} Sending Datagram message se.sics.kompics.network.MessageNotify$Req@c6f9c32 (72bytes)
+[11:18:13,185] TRACE {Serializers} DS-ID: 133 ([-123], 4)
+[11:18:13,186] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@5c071207 for buffer with hint {}.
+[11:18:13,187] TRACE {Serializers} DS-ID: 132 ([-124], 4)
+[11:18:13,188] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@1fb003bd for buffer with hint {}.
+[11:18:13,189] TRACE {Serializers} DS-ID: 136 ([-120], 4)
+[11:18:13,189] DEBUG {Serializers} Using deserializer se.sics.nat.stun.msg.StunEchoSerializer$Response@1839c2b6 for buffer with hint Optional.absent().
+[11:18:13,189] DEBUG {NettyNetwork@43211} Delivering message STUN_ECHO_RESP<DIP_DP>from:193.10.64.85:54320<-2>to:193.10.67.178:43211<1> from 193.10.64.85:54320<-2> to 193.10.67.178:43211<1> protocol UDP
+[11:18:13,952] INFO  {Config} Nat:globalCroupier:0
+[11:18:13,953] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:18:13,954] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:18:13,954] INFO  {Config} Nat:croupier bootstrap:[]
+[11:18:13,958] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:18:13,986] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:18:13,995] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> initiating with bootstrap nodes:[] ...
+[11:18:13,996] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribing
+[11:18:13,996] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribed
+[11:18:13,998] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> starting...
+[11:18:13,998] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> updating selfView:se.sics.nat.common.croupier.GlobalCroupierView@4906f29
+[11:18:13,998] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:18:13,998] TRACE {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> JOIN
+[11:18:13,998] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> joining using nodes:[]
+[11:18:13,998] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:18:14,001] INFO  {ChunkManagerComp} config - datagramUsableSize:1000 cleanupTimeout:10000
+[11:18:14,002] INFO  {NettyNetwork@30000} Successfully bound to ip:port /193.10.67.178:30000
+[11:18:14,009] INFO  {NettyNetwork@30000} Successfully bound UDT to ip:port /193.10.67.178:65297 with config: {RCVBUF_ALLOCATOR=io.netty.channel.AdaptiveRecvByteBufAllocator@30ae3373, io.netty.channel.udt.UdtChannelOption#SYSTEM_RECEIVE_BUFFER_SIZE=1048576, SO_BACKLOG=64, io.netty.channel.udt.UdtChannelOption#PROTOCOL_SEND_BUFFER_SIZE=10485760, io.netty.channel.udt.UdtChannelOption#SYSTEM_SEND_BUFFER_SIZE=1048576, SO_SNDBUF=131072, AUTO_READ=true, ALLOCATOR=PooledByteBufAllocator(directByDefault: true), io.netty.channel.udt.UdtChannelOption#PROTOCOL_RECEIVE_BUFFER_SIZE=10485760, SO_REUSEADDR=true, MESSAGE_SIZE_ESTIMATOR=io.netty.channel.DefaultMessageSizeEstimator@1271bc74, WRITE_BUFFER_LOW_WATER_MARK=32768, SO_LINGER=0, MAX_MESSAGES_PER_READ=16, WRITE_BUFFER_HIGH_WATER_MARK=65536, WRITE_SPIN_COUNT=16, SO_RCVBUF=131072, CONNECT_TIMEOUT_MILLIS=30000}
+[11:18:14,011] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP initiating...
+[11:18:14,011] TRACE {NettyNetwork@30000} Channel connected: UDP /193.10.67.178:30000 => null ([id: 0x04b98f38, /193.10.67.178:30000])
+[11:18:14,011] INFO  {NettyNetwork@30000} Successfully bound to ip:port /193.10.67.178:30000
+[11:18:14,011] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP starting...
+[11:19:29,874] INFO  {NatTestLauncher} initiating
+[11:19:30,084] INFO  {NatTestLauncher} starting
+[11:19:30,168] INFO  {Config} System: seed:2754661436111733040
+[11:19:30,168] INFO  {Config} System: self ip:null port:30000 id:1
+[11:19:30,170] INFO  {Config} System: caracal:missing
+[11:19:30,171] INFO  {Config} System: aggregator:missing
+[11:19:30,174] INFO  {Config} Nat:globalCroupier:0
+[11:19:30,178] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:19:30,183] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:19:30,183] INFO  {Config} Nat:croupier bootstrap:[]
+[11:19:30,187] INFO  {IpSolverComp} initiating...
+[11:19:30,188] INFO  {IpSolverComp} starting...
+[11:19:30,189] DEBUG {IpSolverComp} GetIp request
+[11:19:30,195] DEBUG {IpSolverComp} GetIp responding
+[11:19:30,196] INFO  {Config} Nat:globalCroupier:0
+[11:19:30,196] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:19:30,197] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:19:30,197] INFO  {Config} Nat:croupier bootstrap:[]
+[11:19:30,565] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicContentMsg, found: 133
+[11:19:30,566] TRACE {Serializers} ID: [0, 0, 0, -123] (3, 4)
+[11:19:30,566] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@d629779 for object STUN_ECHO_REQ<SIP_SP>from:193.10.67.178:43211<1>to:193.10.64.107:54321<-1> (sID : [-123]) .
+[11:19:30,567] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.DecoratedHeader, found: 132
+[11:19:30,567] TRACE {Serializers} ID: [0, 0, 0, -124] (3, 4)
+[11:19:30,567] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@277a75de for object se.sics.p2ptoolbox.util.network.impl.DecoratedHeader@bbe0f9f5 (sID : [-124]) .
+[11:19:30,567] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicHeader, found: 130
+[11:19:30,572] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.DecoratedAddress, found: 129
+[11:19:30,572] TRACE {Serializers} Checked rule for class se.sics.p2ptoolbox.util.network.impl.BasicAddress, found: 128
+[11:19:30,576] TRACE {Serializers} Checked rule for class se.sics.nat.stun.msg.StunEcho$Request, found: 135
+[11:19:30,576] TRACE {Serializers} ID: [0, 0, 0, -121] (3, 4)
+[11:19:30,577] DEBUG {Serializers} Using serializer se.sics.nat.stun.msg.StunEchoSerializer$Request@66c3601f for object STUN_ECHO_REQ<SIP_SP> (sID : [-121]) .
+[11:19:30,577] TRACE {Serializers} Checked rule for class java.util.UUID, found: 6
+[11:19:30,610] TRACE {Serializers} DS-ID: 133 ([-123], 4)
+[11:19:30,610] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@d629779 for buffer with hint {}.
+[11:19:30,610] TRACE {Serializers} DS-ID: 132 ([-124], 4)
+[11:19:30,610] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@277a75de for buffer with hint {}.
+[11:19:30,611] TRACE {Serializers} DS-ID: 136 ([-120], 4)
+[11:19:30,611] DEBUG {Serializers} Using deserializer se.sics.nat.stun.msg.StunEchoSerializer$Response@3be44e14 for buffer with hint Optional.absent().
+[11:19:30,628] TRACE {Serializers} ID: [0, 0, 0, -123] (3, 4)
+[11:19:30,628] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@d629779 for object STUN_ECHO_REQ<DIP_DP>from:193.10.67.178:43211<1>to:193.10.64.107:54321<-1> (sID : [-123]) .
+[11:19:30,628] TRACE {Serializers} ID: [0, 0, 0, -124] (3, 4)
+[11:19:30,628] DEBUG {Serializers} Using serializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@277a75de for object se.sics.p2ptoolbox.util.network.impl.DecoratedHeader@bbe0f9f5 (sID : [-124]) .
+[11:19:30,629] TRACE {Serializers} ID: [0, 0, 0, -121] (3, 4)
+[11:19:30,629] DEBUG {Serializers} Using serializer se.sics.nat.stun.msg.StunEchoSerializer$Request@66c3601f for object STUN_ECHO_REQ<DIP_DP> (sID : [-121]) .
+[11:19:30,638] TRACE {Serializers} DS-ID: 133 ([-123], 4)
+[11:19:30,638] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.BasicContentMsgSerializer@d629779 for buffer with hint {}.
+[11:19:30,638] TRACE {Serializers} DS-ID: 132 ([-124], 4)
+[11:19:30,639] DEBUG {Serializers} Using deserializer se.sics.p2ptoolbox.util.network.impl.DecoratedHeaderSerializer@277a75de for buffer with hint {}.
+[11:19:30,639] TRACE {Serializers} DS-ID: 136 ([-120], 4)
+[11:19:30,639] DEBUG {Serializers} Using deserializer se.sics.nat.stun.msg.StunEchoSerializer$Response@3be44e14 for buffer with hint Optional.absent().
+[11:19:31,470] INFO  {Config} Nat:globalCroupier:0
+[11:19:31,471] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:19:31,471] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:19:31,472] INFO  {Config} Nat:croupier bootstrap:[]
+[11:19:31,475] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:19:31,499] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:19:31,507] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> initiating with bootstrap nodes:[] ...
+[11:19:31,509] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribing
+[11:19:31,510] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribed
+[11:19:31,512] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> starting...
+[11:19:31,512] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> updating selfView:se.sics.nat.common.croupier.GlobalCroupierView@275c6da4
+[11:19:31,512] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:19:31,512] TRACE {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> JOIN
+[11:19:31,512] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> joining using nodes:[]
+[11:19:31,512] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:19:31,516] INFO  {ChunkManagerComp} config - datagramUsableSize:1000 cleanupTimeout:10000
+[11:19:31,525] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP initiating...
+[11:19:31,526] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP starting...
+[11:20:15,823] INFO  {NatTestLauncher} initiating
+[11:20:16,012] INFO  {NatTestLauncher} starting
+[11:20:16,096] INFO  {Config} System: seed:5622668589923807274
+[11:20:16,097] INFO  {Config} System: self ip:null port:30000 id:1
+[11:20:16,097] INFO  {Config} System: caracal:missing
+[11:20:16,098] INFO  {Config} System: aggregator:missing
+[11:20:16,099] INFO  {Config} Nat:globalCroupier:0
+[11:20:16,102] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:20:16,107] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:20:16,107] INFO  {Config} Nat:croupier bootstrap:[]
+[11:20:16,110] INFO  {IpSolverComp} initiating...
+[11:20:16,110] INFO  {IpSolverComp} starting...
+[11:20:16,111] DEBUG {IpSolverComp} GetIp request
+[11:20:16,117] DEBUG {IpSolverComp} GetIp responding
+[11:20:16,119] INFO  {Config} Nat:globalCroupier:0
+[11:20:16,119] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:20:16,120] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:20:16,120] INFO  {Config} Nat:croupier bootstrap:[]
+[11:20:17,383] INFO  {Config} Nat:globalCroupier:0
+[11:20:17,383] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:20:17,385] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:20:17,385] INFO  {Config} Nat:croupier bootstrap:[]
+[11:20:17,388] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:20:17,414] INFO  {CroupierConfig} policy:RANDOM view size:5 shuffle size:5 period:2000 timeout:1000 softMaxTemperature:500.0
+[11:20:17,420] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> initiating with bootstrap nodes:[] ...
+[11:20:17,421] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribing
+[11:20:17,423] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> subscribed
+[11:20:17,427] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> starting...
+[11:20:17,427] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> updating selfView:se.sics.nat.common.croupier.GlobalCroupierView@1d191157
+[11:20:17,427] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:20:17,428] TRACE {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> JOIN
+[11:20:17,428] DEBUG {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> joining using nodes:[]
+[11:20:17,428] INFO  {CroupierComp} <oid:0,nid:193.10.67.178:30000<1>> no partners - not shuffling
+[11:20:17,433] INFO  {ChunkManagerComp} config - datagramUsableSize:1000 cleanupTimeout:10000
+[11:20:17,446] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP initiating...
+[11:20:17,447] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP starting...
+[11:21:19,392] INFO  {NatTestLauncher} initiating
+[11:21:19,592] INFO  {NatTestLauncher} starting
+[11:21:19,664] INFO  {Config} System: seed:7283750789817729595
+[11:21:19,664] INFO  {Config} System: self ip:null port:30000 id:1
+[11:21:19,665] INFO  {Config} System: caracal:missing
+[11:21:19,665] INFO  {Config} System: aggregator:missing
+[11:21:19,667] INFO  {Config} Nat:globalCroupier:0
+[11:21:19,671] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:21:19,676] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:21:19,676] INFO  {Config} Nat:croupier bootstrap:[]
+[11:21:19,679] INFO  {IpSolverComp} initiating...
+[11:21:19,680] INFO  {IpSolverComp} starting...
+[11:21:19,681] DEBUG {IpSolverComp} GetIp request
+[11:21:19,693] DEBUG {IpSolverComp} GetIp responding
+[11:21:19,695] INFO  {Config} Nat:globalCroupier:0
+[11:21:19,695] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:21:19,696] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:21:19,696] INFO  {Config} Nat:croupier bootstrap:[]
+[11:21:20,960] INFO  {Config} Nat:globalCroupier:0
+[11:21:20,960] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:21:20,962] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:21:20,962] INFO  {Config} Nat:croupier bootstrap:[]
+[11:21:21,003] INFO  {ChunkManagerComp} config - datagramUsableSize:1000 cleanupTimeout:10000
+[11:21:21,011] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP initiating...
+[11:21:21,011] INFO  {ChunkManagerComp} 193.10.67.178:30000<1>OP starting...
+[11:21:50,851] INFO  {NatTestLauncher} initiating
+[11:21:51,053] INFO  {NatTestLauncher} starting
+[11:21:51,128] INFO  {Config} System: seed:-2502454583983645687
+[11:21:51,129] INFO  {Config} System: self ip:null port:30000 id:1
+[11:21:51,130] INFO  {Config} System: caracal:missing
+[11:21:51,131] INFO  {Config} System: aggregator:missing
+[11:21:51,133] INFO  {Config} Nat:globalCroupier:0
+[11:21:51,136] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:21:51,144] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:21:51,144] INFO  {Config} Nat:croupier bootstrap:[]
+[11:21:51,147] INFO  {IpSolverComp} initiating...
+[11:21:51,148] INFO  {IpSolverComp} starting...
+[11:21:51,149] DEBUG {IpSolverComp} GetIp request
+[11:21:51,155] DEBUG {IpSolverComp} GetIp responding
+[11:21:51,159] INFO  {Config} Nat:globalCroupier:0
+[11:21:51,159] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:21:51,161] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:21:51,162] INFO  {Config} Nat:croupier bootstrap:[]
+[11:21:52,436] INFO  {Config} Nat:globalCroupier:0
+[11:21:52,437] INFO  {Config} Nat:stun client port1:43211 port2:43210
+[11:21:52,444] INFO  {Config} Nat:stun servers:[[193.10.64.107:54321<-1>, 193.10.64.107:54320<-1>], [193.10.64.85:54321<-2>, 193.10.64.85:54320<-2>]]
+[11:21:52,445] INFO  {Config} Nat:croupier bootstrap:[]
+[11:22:59,244] INFO  {NatTestLauncher} initiating
+[11:22:59,471] INFO  {NatTestLauncher} starting

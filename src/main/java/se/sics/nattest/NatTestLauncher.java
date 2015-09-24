@@ -43,13 +43,16 @@ import se.sics.kompics.timer.java.JavaTimer;
 import se.sics.nat.NatLauncherProxy;
 import se.sics.nat.NatSerializerSetup;
 import se.sics.nat.NatSetup;
+import se.sics.nat.NatSetupResult;
 import se.sics.nat.hp.SHPSerializerSetup;
 import se.sics.nat.pm.PMSerializerSetup;
 import se.sics.nat.stun.StunSerializerSetup;
+import se.sics.nattest.NatTestComp.NatTestInit;
 import se.sics.nattest.serializer.NatTestSerializerSetup;
 import se.sics.p2ptoolbox.chunkmanager.ChunkManagerSerializerSetup;
 import se.sics.p2ptoolbox.croupier.CroupierPort;
 import se.sics.p2ptoolbox.croupier.CroupierSerializerSetup;
+import se.sics.p2ptoolbox.util.config.SystemConfig;
 import se.sics.p2ptoolbox.util.helper.SystemConfigBuilder;
 import se.sics.p2ptoolbox.util.nat.NatedTrait;
 import se.sics.p2ptoolbox.util.network.impl.DecoratedAddress;
@@ -62,38 +65,21 @@ import se.sics.p2ptoolbox.util.update.SelfAddressUpdatePort;
  */
 public class NatTestLauncher extends ComponentDefinition {
 
-    private Logger LOG = LoggerFactory.getLogger(NatTestLauncher.class);
+    private static Logger LOG = LoggerFactory.getLogger(NatTestLauncher.class);
     private String logPrefix = "";
 
     private Component timer;
-    private Negative<Network> network;
-    private Negative<SelfAddressUpdatePort> adrUpdate;
-    private Negative<CroupierPort> globalCroupier;
+    private Positive<Network> network;
+    private Positive<SelfAddressUpdatePort> adrUpdate;
+    private Positive<CroupierPort> globalCroupier;
     private Component natTest;
 
+    private SystemConfig systemConfig;
+    
     public NatTestLauncher() {
         LOG.info("{}initiating", logPrefix);
         systemSetup();
         subscribe(handleStart, control);
-    }
-    
-    private void systemSetup() {
-        int serializerId = 128;
-        serializerId = BasicSerializerSetup.registerBasicSerializers(serializerId);
-        serializerId = StunSerializerSetup.registerSerializers(serializerId);
-        serializerId = CroupierSerializerSetup.registerSerializers(serializerId);
-        serializerId = PMSerializerSetup.registerSerializers(serializerId);
-        serializerId = SHPSerializerSetup.registerSerializers(serializerId);
-        serializerId = NatSerializerSetup.registerSerializers(serializerId);
-        serializerId = ChunkManagerSerializerSetup.registerSerializers(serializerId);
-        serializerId = NatTestSerializerSetup.registerSerializers(serializerId);
-
-        if (serializerId > 255) {
-            throw new RuntimeException("switch to bigger serializerIds, last serializerId:" + serializerId);
-        }
-
-        ImmutableMap acceptedTraits = ImmutableMap.of(NatedTrait.class, 0);
-        DecoratedAddress.setAcceptedTraits(new AcceptedTraits(acceptedTraits));
     }
 
     private Handler handleStart = new Handler<Start>() {
@@ -115,25 +101,27 @@ public class NatTestLauncher extends ComponentDefinition {
         NatSetup natSetup = new NatSetup(new NatTestProxy(),
                 timer.getPositive(Timer.class),
                 new SystemConfigBuilder(ConfigFactory.load()));
-        natSetup.start();
+        natSetup.setup();
+        natSetup.start(false);
     }
-    
+
     private void connectNStartApp() {
-        natTest = create(NatTestComp.class, Init.NONE);
-        connect(natTest.getPositive(Network.class), network);
-        connect(natTest.getPositive(SelfAddressUpdatePort.class), adrUpdate);
-        connect(natTest.getPositive(CroupierPort.class), globalCroupier);
+        natTest = create(NatTestComp.class, new NatTestInit(systemConfig.self));
+        connect(natTest.getNegative(Network.class), network);
+        connect(natTest.getNegative(SelfAddressUpdatePort.class), adrUpdate);
+        connect(natTest.getNegative(CroupierPort.class), globalCroupier);
         trigger(Start.event, natTest.control());
     }
 
     public class NatTestProxy implements NatLauncherProxy {
 
         @Override
-        public void startApp(Negative<Network> network, Negative<SelfAddressUpdatePort> adrUpdate, Negative<CroupierPort> globalCroupier) {
-            LOG.info("{}nat started", logPrefix);
-            NatTestLauncher.this.network = network;
-            NatTestLauncher.this.adrUpdate = adrUpdate;
-            NatTestLauncher.this.globalCroupier = globalCroupier;
+        public void startApp(NatSetupResult result) {
+            NatTestLauncher.this.network = result.network;
+            NatTestLauncher.this.adrUpdate = result.adrUpdate;
+            NatTestLauncher.this.globalCroupier = result.globalCroupier;
+            NatTestLauncher.this.systemConfig = result.systemConfig;
+            LOG.info("{}nat started with:{}", logPrefix, result.systemConfig.self);
             NatTestLauncher.this.connectNStartApp();
         }
 
@@ -202,8 +190,34 @@ public class NatTestLauncher extends ComponentDefinition {
             NatTestLauncher.this.subscribe(handler, port);
         }
     }
+
+    private static void systemSetup() {
+        int serializerId = 128;
+        serializerId = BasicSerializerSetup.registerBasicSerializers(serializerId);
+        serializerId = StunSerializerSetup.registerSerializers(serializerId);
+        serializerId = CroupierSerializerSetup.registerSerializers(serializerId);
+        serializerId = PMSerializerSetup.registerSerializers(serializerId);
+        serializerId = SHPSerializerSetup.registerSerializers(serializerId);
+        serializerId = NatSerializerSetup.registerSerializers(serializerId);
+        serializerId = ChunkManagerSerializerSetup.registerSerializers(serializerId);
+        serializerId = NatTestSerializerSetup.registerSerializers(serializerId);
+
+        if (serializerId > 255) {
+            throw new RuntimeException("switch to bigger serializerIds, last serializerId:" + serializerId);
+        }
+
+        ImmutableMap acceptedTraits = ImmutableMap.of(NatedTrait.class, 0);
+        DecoratedAddress.setAcceptedTraits(new AcceptedTraits(acceptedTraits));
+    }
     
     public static void main(String[] args) {
+        systemSetup();
+        
+        if (System.getProperty("java.net.preferIPv4Stack") == null
+                || System.getProperty("java.net.preferIPv4Stack").equals("false")) {
+            LOG.error("java.net.preferIPv4Stack not set");
+            System.exit(1);
+        }
 
         if (Kompics.isOn()) {
             Kompics.shutdown();

@@ -30,7 +30,6 @@ import se.sics.kompics.Init;
 import se.sics.kompics.Kompics;
 import se.sics.kompics.Positive;
 import se.sics.kompics.Start;
-import se.sics.kompics.network.Msg;
 import se.sics.kompics.network.Network;
 import se.sics.kompics.network.Transport;
 import se.sics.nattest.msg.NatTestMsg;
@@ -64,31 +63,22 @@ public class NatTestComp extends ComponentDefinition {
     private final Set<String> pinged = new HashSet<String>();
     private final Set<String> ponged = new HashSet<String>();
 
-    public NatTestComp() {
-        this.logPrefix = self.getBase() + " ";
-        LOG.info("{}initiating with self:{} ping:{}",
-                new Object[]{logPrefix});
+    public NatTestComp(NatTestInit init) {
+        this.self = init.self;
+        logPrefix = init.self.toString();
+        LOG.info("{}initiating", logPrefix);
 
         subscribe(handleStart, control);
+        subscribe(handleCroupierSample, croupier);
+        subscribe(handleSelfAddressUpdate, selfAddress);
+        subscribe(handlePing, network);
+        subscribe(handlePong, network);
     }
 
     Handler handleStart = new Handler<Start>() {
         @Override
         public void handle(Start event) {
             LOG.info("{}starting", logPrefix);
-            trigger(new SelfAddress.Request(UUID.randomUUID()), selfAddress);
-        }
-    };
-
-    Handler handleSelfAddressResponse = new Handler<SelfAddress.Response>() {
-        @Override
-        public void handle(SelfAddress.Response resp) {
-            LOG.info("{}update self:{}", logPrefix, resp.selfAddress);
-            self = resp.selfAddress;
-            subscribe(handleCroupierSample, croupier);
-            subscribe(handlePing, network);
-            subscribe(handlePong, network);
-            subscribe(handleSelfAddressUpdate, selfAddress);
         }
     };
 
@@ -103,6 +93,11 @@ public class NatTestComp extends ComponentDefinition {
     Handler handleCroupierSample = new Handler<CroupierSample<Object>>() {
         @Override
         public void handle(CroupierSample<Object> sample) {
+            if(self == null) {
+                trigger(new SelfAddress.Request(UUID.randomUUID()), selfAddress);
+                LOG.info("{}waiting for self address", logPrefix);
+                return;
+            }
             LOG.info("{}received public:{}, private:{}",
                     new Object[]{logPrefix, sample.publicSample, sample.privateSample});
             LOG.info("{}nat:{}", logPrefix, self.getTrait(NatedTrait.class).natToString());
@@ -155,4 +150,11 @@ public class NatTestComp extends ComponentDefinition {
                 }
             };
 
+    public static class NatTestInit extends Init<NatTestComp> {
+        public final DecoratedAddress self;
+        
+        public NatTestInit(DecoratedAddress self) {
+             this.self = self;
+        }
+    }
 }
